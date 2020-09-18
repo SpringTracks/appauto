@@ -35,12 +35,16 @@ class MyTests_tempreature(unittest.TestCase):
         sleep(2)
         el6=self.driver.find_element_by_android_uiautomator('new UiSelector().textContains("济南市")')
         el6.click()
-        sleep(5)
+        sleep(15)
         #判断是否有弹出提示窗口，如有，关闭掉
-        isPop=isElement(self,id,"com.moji.mjweather:id/b3j")
-        #print(isPop)
-        if isPop:
-            self.driver.find_element_by_id("com.moji.mjweather:id/b3j").click()#点击弹窗右上方的×号
+        # isPop=isElement(self,id,"com.moji.mjweather:id/b3j")
+        # print(isPop)
+        # if isPop:
+        #     self.driver.find_element_by_id("com.moji.mjweather:id/b3j").click()#点击弹窗右上方的×号
+        try:
+            self.driver.find_element_by_id("com.moji.mjweather:id/b3j").click()
+        except Exception as e:
+            print(e)
 
 
     #检验当前温度，parameterized参数化
@@ -52,7 +56,7 @@ class MyTests_tempreature(unittest.TestCase):
     ])
     def test_Temperature(self,tem):
         self.boot()
-        sleep(15)
+        sleep(2)
         el8=self.driver.find_element_by_id("com.moji.mjweather:id/dt3")
         temperature=el8.text
         temperatureNum=int(temperature[0:2])
