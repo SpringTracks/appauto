@@ -27,29 +27,30 @@ class MyTests_tempreature(unittest.TestCase):
         #同意协议
         el1 = self.driver.find_element_by_id("com.moji.mjweather:id/iw")
         el1.click()
-        sleep(10)
+        sleep(15)
 
         #输入济南并选择济南
         el5=self.driver.find_element_by_id('com.moji.mjweather:id/b52')
         el5.send_keys("济南")
-        sleep(2)
+        sleep(5)
         el6=self.driver.find_element_by_android_uiautomator('new UiSelector().textContains("济南市")')
         el6.click()
         sleep(15)
+
         #判断是否有弹出提示窗口，如有，关闭掉
-        # isPop=isElement(self,id,"com.moji.mjweather:id/b3j")
-        # print(isPop)
-        # if isPop:
-        #     self.driver.find_element_by_id("com.moji.mjweather:id/b3j").click()#点击弹窗右上方的×号
-        try:
-            self.driver.find_element_by_id("com.moji.mjweather:id/b3j").click()
-        except Exception as e:
-            print(e)
+        isPop=isElement(self,'id',"com.moji.mjweather:id/b3j")
+        #print(isPop)
+        if isPop:
+            self.driver.find_element_by_id("com.moji.mjweather:id/b3j").click()#点击弹窗右上方的×号
+        # try:
+        #     self.driver.find_element_by_id("com.moji.mjweather:id/b3j").click()
+        # except Exception as e:
+        #     print(e)
 
 
     #检验当前温度，parameterized参数化
     @parameterized.expand([
-        (26,),
+        (29,),
         (25,),
         # (29,),
         # (23,),
