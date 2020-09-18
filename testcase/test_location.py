@@ -53,10 +53,14 @@ class MyTests(unittest.TestCase):
         el6.click()
         sleep(5)
         #判断是否有弹出提示窗口，如有，关闭掉
-        isPop=isElement(self,id,"com.moji.mjweather:id/b3j")
-        #print(isPop)
-        if isPop:
-            self.driver.find_element_by_id("com.moji.mjweather:id/b3j").click()#点击弹窗右上方的×号
+        # isPop=isElement(self,id,"com.moji.mjweather:id/b3j")
+        # print(isPop)
+        # if isPop:
+        #     self.driver.find_element_by_id("com.moji.mjweather:id/b3j").click()#点击弹窗右上方的×号
+        try:
+            self.driver.find_element_by_id("com.moji.mjweather:id/b3j").click()
+        except Exception as e:
+            print(e)
 
      #校验是否添加济南成功
     @data(*getExcelTestData('Sheet1'))
