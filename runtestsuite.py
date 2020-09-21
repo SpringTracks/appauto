@@ -12,7 +12,8 @@ if __name__ == "__main__":
 
     suite = unittest.TestSuite()
     #指定要执行的用例的类名
-    uite1 = unittest.TestLoader().loadTestsFromTestCase(testmysql)
+    #MyTests_tempreature  MyTests
+    uite1 = unittest.TestLoader().loadTestsFromTestCase(MyTests_tempreature)
     suite.addTests(uite1)
 
     report_dir = './test_report'

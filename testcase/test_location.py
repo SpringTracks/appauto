@@ -37,14 +37,14 @@ class MyTests(unittest.TestCase):
     #测试方法
     def boot(self):
         #同意协议
-        el1 = self.driver.find_element_by_id("com.moji.mjweather:id/iw")
+        el1 = self.driver.find_element_by_id("com.moji.mjweather:id/j1")
         el1.click()
         # el3=self.driver.find_element_by_xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.View/android.widget.TextView[3]")
         # el3.click()
         sleep(10)
 
         #输入济南并选择济南
-        el5=self.driver.find_element_by_id('com.moji.mjweather:id/b52')
+        el5=self.driver.find_element_by_id('com.moji.mjweather:id/b5h')
         #el5=self.driver.find_element_by_xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.EditText")
         el5.send_keys("济南")
         sleep(2)
@@ -68,7 +68,7 @@ class MyTests(unittest.TestCase):
         self.boot()
         comparedLocation=tuple(data)
 
-        el7=self.driver.find_element_by_id("com.moji.mjweather:id/ek")
+        el7=self.driver.find_element_by_id("com.moji.mjweather:id/en")
         locationString=el7.text
         locationString2=locationString[0:2]
         #print(locationString2)

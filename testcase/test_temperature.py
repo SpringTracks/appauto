@@ -25,12 +25,12 @@ class MyTests_tempreature(unittest.TestCase):
     #测试方法
     def boot(self):
         #同意协议
-        el1 = self.driver.find_element_by_id("com.moji.mjweather:id/iw")
+        el1 = self.driver.find_element_by_id("com.moji.mjweather:id/j1")
         el1.click()
         sleep(15)
 
         #输入济南并选择济南
-        el5=self.driver.find_element_by_id('com.moji.mjweather:id/b52')
+        el5=self.driver.find_element_by_id('com.moji.mjweather:id/b5h')
         el5.send_keys("济南")
         sleep(5)
         el6=self.driver.find_element_by_android_uiautomator('new UiSelector().textContains("济南市")')
@@ -58,7 +58,7 @@ class MyTests_tempreature(unittest.TestCase):
     def test_Temperature(self,tem):
         self.boot()
         sleep(2)
-        el8=self.driver.find_element_by_id("com.moji.mjweather:id/dt3")
+        el8=self.driver.find_element_by_id("com.moji.mjweather:id/du8")
         temperature=el8.text
         temperatureNum=int(temperature[0:2])
         #print(temperatureNum)
