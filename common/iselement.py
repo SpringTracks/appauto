@@ -39,7 +39,7 @@ def isElement(self,identifyBy,c):
         elif identifyBy == "css selector":
             self.driver.find_element_by_css_selector(c)
             flag = True
-    except NoSuchElementException as e:
+    except Exception as e:
         flag = False
     finally:
         return flag
