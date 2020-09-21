@@ -50,8 +50,8 @@ class MyTests_tempreature(unittest.TestCase):
 
     #检验当前温度，parameterized参数化
     @parameterized.expand([
-        (29,),
-        (25,),
+        (20,),
+        (26,),
         # (29,),
         # (23,),
     ])
