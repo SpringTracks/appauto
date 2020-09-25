@@ -42,7 +42,7 @@ class MyTests(unittest.TestCase):
         el6.click()
         sleep(15)
         #判断是否有弹出提示窗口，如有，关闭掉
-        isPop=isElement(self,id,"com.moji.mjweather:id/b3z")
+        isPop=isElement(self,'id',"com.moji.mjweather:id/b3z")
         print(isPop)
         if isPop:
             self.driver.find_element_by_id("com.moji.mjweather:id/b3z").click()#点击弹窗右上方的×号
