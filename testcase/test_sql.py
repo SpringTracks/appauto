@@ -2,7 +2,7 @@ import json
 import unittest
 from common.opreatemysql import OperateMysql
 
-class testmysql(unittest.TestCase):
+class Testmysql(unittest.TestCase):
 
 
     def testmysql(self):
