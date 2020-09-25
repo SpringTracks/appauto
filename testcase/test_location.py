@@ -40,10 +40,10 @@ class MyTests(unittest.TestCase):
         sleep(2)
         el6=self.driver.find_element_by_android_uiautomator('new UiSelector().textContains("济南市")')
         el6.click()
-        sleep(5)
+        sleep(15)
         #判断是否有弹出提示窗口，如有，关闭掉
         isPop=isElement(self,id,"com.moji.mjweather:id/b3z")
-        #print(isPop)
+        print(isPop)
         if isPop:
             self.driver.find_element_by_id("com.moji.mjweather:id/b3z").click()#点击弹窗右上方的×号
         # try:
